@@ -15,17 +15,15 @@ Java课程作业项目仓库
 教师（编号、姓名、性别、所授课程、……）
 			学生（编号、姓名、性别、所选课程、……）
 			课程（编号、课程名称、上课地点、时间、授课教师、……）
-### 实验要求
+## 实验要求
 1.编写上述实体类以及测试主类（注意类之间继承关系的适用）  
 2.在测试主类中，实例化多个类实体，模拟学生选课操作、打印课程信息（信息包括：编号、课程名称、上课地点、时间、授课教师 等）；模拟学生退课操作，再打印课程信息。  
 3.编写实验报告。  
 ## 实验过程
 **1.首先创建两个package：Information 和 Run。  
-2.在Information 包中创建两个class：CPU 和 HardDisk，并在Run 包中创建两个class：PC 和 Test。  
-3.CPU类中：**  
-*(a)在CPU类中创建三个private属性：speed、processor、hertz分别表示cpu的速度、处理器品牌和频率。    
-(b)并为三个属性定义三组方法（set-get）。   
-(c)创建一个默认构造方法（用来显示原来看不见的默认构造方法）。和一个新的构造方法用以调用三个属性的set方法。*    
+2.在Information 包中实例化四个类：Teacher、student、course 和 people，并在Run 包中实例化一个类：Test。  
+3.people类中：**  
+*作为一个父类，主要为其他三个同包子类提供变量*    
 **4.HardDisk类中：**  
 *(a)在HardDisk类中创建两个private属性：amount和readSpeed分别表示硬盘的容量和读写速度。    
 (b)并为两个属性定义两组方法（set-get）。   
@@ -34,8 +32,8 @@ Java课程作业项目仓库
 **5.PC中：**  
 *(a)PC类中调用CPU类和HardDisk类，并分别建立新的属性cpu和HD。    
 (b)然后创建show（）函数来展示所获取的信息。*    
-**6.最后在Test 创建主方法来为CPU和HardDisk中五个属性赋值，并调用PC类中show（）函数来输出信息。**
-
+**6.最后在Test 创建主方法来为CPU和HardDisk中五个属性赋值，并调用PC类中show（）函数来输出信息。**  
+## 流程图  
 ## 核心方法  
 
 ***1.方法（processor赋值方法，setcentre和sethertz赋值方法与此类似）***
@@ -109,7 +107,8 @@ public class Test {
 
 }
 ```
-## 实验结果
+## 注释  
+## 系统运行截图  
 Picture1.CPU processor was wrong：
 ![CPU processor was wrong](https://i.loli.net/2020/10/08/bH6dcI1jyV2mQoU.jpg)  
 Picture2.CPU hertz and HarddDsk readSpeed were wrong： 
