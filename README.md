@@ -23,8 +23,8 @@ Java课程作业项目仓库
 **1.首先创建两个package：Information 和 Run。  
 2.在Information 包中实例化四个类：Teacher、Student、Course 和 People，并在Run 包中实例化一个类：Test。  
 3.People类中：**  
-*1.作为一个父类，主要为其他三个同包子类提供变量。（最重要两个变量：stuNo、courseNumber,用于计数判断）
-2.提供默认构造方法和toString方法。*    
+*(a).作为一个父类，主要为其他三个同包子类提供变量。（最重要两个变量：stuNo、courseNumber,用于计数判断）
+(b).提供默认构造方法和toString方法。*    
 **4.Teacher类中：**  
 *(a)在Teacher类中创建两个 private属性：teacherName和 teacherId分别表示老师姓名和老师工号，并从父类中继承编号（num）、性别（sex）。  
 (b)创建构造方法，调用本类的方法实现信息（编号、姓名、性别）的打印。
@@ -40,86 +40,237 @@ Java课程作业项目仓库
 (c)在打印授课名称时，运用 super语法调用People类中courseNumber变量。
 (d)创建一组方法（学生数加减方法）：addStuNo和 reduceStuNo，来实现对学生数修改。  *    
 **7.Test_courseChooseSystem中**  
-*(a)在本类中，调用 Teacher、Student、Course类，以及java.util.Scanner用来实现控制台输入信息。
+*(a)在本类中，调用 Teacher、Student、Course类，以及 java.util.Scanner用来实现控制台输入信息。
 (b)创建三个方法：judgeStu、judgeChoose、courseChoose依次对输入数据进行判断。
 (c)创建两个个方法：addWork、reduceWork根据对变量 stuNo、courseNo的同时判断，来实现对不同同学选择不同的老师计数。
 (d)创建一组打印方法：printAll、printTeacher、printTeacherAll、printStudent、printStudentAll、printCourse、printCourseAll方便主方法进行信息的打印。
-(e)最后在主方法中建立一个循环（保持选课系统持续存在，方便多次选课），接受第一次数据输入，调用judge（）方法开始进行选课。选课完毕，调用printAll（）方法打印信息*   
+(e)最后在主方法中建立一个循环（保持选课系统持续存在，方便多次选课），接受第一次数据输入，调用judge（）方法开始进行选课。选课完毕，调用 printAll（）方法打印信息*   
 ## 流程图  
 ## 核心方法  
 
-***1.方法（processor赋值方法，setcentre和sethertz赋值方法与此类似）***
+***1.Teacher构造方法***
 ```
-public void setProcessor(String m) {
-	if(m=="Intel" || m=="AMD")
-		processor=m;
-	    else 
-	    	{System.out.println("The CPU processor was wrong!");
-	    	processor="404000";
-	    	}
+public Teacher(int number,String name,String id,String course){
+	setNo(number);
+	setTeacherName(name);
+	setTeacherId(id);
+	setTeaCourse(course);
+}
+``` 
+***2.Teacher内打印编号方法（与姓名、工号、性别、课程类似）***
+```
+public int getNo(){
+	return num;	
+}
+void setNo(int number) {
+	this.num=number;	
+}
+``` 
+***3.Student构造方法***  
+```
+public Student(int number,String name,String sex,String id,int course){
+	setNo(number);
+	setStudentName(name);
+	setStudentId(id);
+	setCourses(course);
 	}
 ``` 
-***2.方法（CPU类中两个构造方法）***  
+***4.Student内打印编号方法（与姓名、学号、性别、课程数类似）***
 ```
-public CPU(int centre) {
-	setCentre(centre);	
+public int getNo(){
+	return num;	
 }
-
-public CPU(String processor,double hertz) {
-	setProcessor(processor);
-	setHertz(hertz);
+void setNo(int number) {
+	this.num=number;	
 }
-
 ``` 
-***3.方法（setamount赋值方法，setreadspeed赋值方法与此类似）***
+***5.课程数增减方法***
 ```
-public void setAmount(int amount) {
-	if(amount>160 && amount<1024)
-        this.amount = amount;
-	else {System.out.println("The HardDisk amount was wrong!");
-	this.amount=404000;
+public void addCourses(int courseNumber) {
+	this.courseNumber = courseNumber+1;
+}
+public void reduceCourses(int courseNumber) {
+	this.courseNumber = courseNumber-1;
+}
+}
+```
+***6.Course构造方法***
+``` 
+public Course(int number,String name,String add,int stuNo){
+	setNo(number);
+	setName(name);
+	setAdd(add);
+	setStuNo(stuNo);
 	}
-
- }
-``` 
-***4.方法（HardDisk类两个构造方法）***
 ```
-public HardDisk(int amount,int readSpeed) {
-	setAmount(amount);
-	setReadSpeed(readSpeed);
+***7.学生数增减方法***
+``` 
+public void addStuNo(int stuNo) {
+	super.stuNo = stuNo+1;
+}
+public void reduceStuNo(int stuNo) {
+	super.stuNo = stuNo-1;
 }
 ```
-***5.方法(PC类中主构造方法)***
+***8.Test主方法***
 ``` 
-public HardDisk(){
+public static void main(String[] args) {
+		
+		for(;;) {
+			printStudentAll();
+			Scanner reader = new Scanner(System.in);
+			int x =reader.nextInt();
+			stuNo=x;//记录学生编号
+			judgeStu(x);//选择学生
+			printAll();
+		}
 	
-}
-public PC(CPU cpu,HardDisk HD) {
-	setCPU(cpu);
-	setHardDisk(HD);
-}
+		
+	}
 ```
-***6.方法(Test类中运行本程序主方法)***
+***9.学生选择方法（根据主类中获得数据选择学生）***
 ``` 
-public class Test {
-
-   public static void main(String args[]) {
-
-       CPU cpu = new CPU(6);
-       
-       CPU recpu = new CPU("Intel",3.8);
-
-       HardDisk HD=new HardDisk(512,240);
-
-       PC pc =new PC(cpu,recpu,HD);
-
-       pc.show();
-
-    }
-
-}
+public static void judgeStu(int No) {
+		Scanner reader = new Scanner(System.in);
+		printStudent(stuNo);
+		System.out.println("1.选课\n2.退课");
+		int y =reader.nextInt();
+		if(No==1)
+			judgeChoose(y);
+		if(No==2)
+			judgeChoose(y);
+		if(No==3)
+			judgeChoose(y);
+		if(No==4)
+			judgeChoose(y);
+	}
 ```
-## 注释  
+***10.选退课判断方法***
+``` 
+public static void judgeChoose(int No) {//确认退课选课，选择课程编号
+		Scanner reader = new Scanner(System.in);
+		printCourseAll();
+		int z =reader.nextInt();
+		courseNo=z;//记录课程编号
+		if(No==1){//选课
+			courseChoose(z);
+		    addWork(stuNo,courseNo);
+		    }
+		if(No==2){//退课
+			courseChoose(z);
+		    reduceWork(stuNo,courseNo);
+		    }
+	}
+```
+***11.课程选择方法***
+``` 
+public static void courseChoose(int No) {//选择课程并打印老师
+		Scanner reader = new Scanner(System.in);
+		if(No==1) {
+			printTeacher(1);
+		    }
+		if(No==2) {
+			printTeacher(2);
+			}
+		//else System.out.println("没有该课程信息，请输入1~2");
+		
+	}
+```
+***12.增加操作方法***
+``` 
+public static void addWork(int stuNo,int courseNo) {
+		if (stuNo==1 && courseNo==1) {
+		cou0.addStuNo(cou0.getStuNo());
+		stu0.addCourses(stu0.getCourses());
+		}
+		else if (stuNo==1 && courseNo==2) {
+		cou1.addStuNo(cou1.getStuNo());
+		stu0.addCourses(stu0.getCourses());
+		}
+		else if (stuNo==2 && courseNo==1) {
+		cou0.addStuNo(cou0.getStuNo());
+		stu1.addCourses(stu1.getCourses());
+		}
+		else if (stuNo==2 && courseNo==2) {
+			cou1.addStuNo(cou1.getStuNo());
+			stu1.addCourses(stu1.getCourses());
+			}
+		else if (stuNo==3 && courseNo==1) {
+			cou0.addStuNo(cou0.getStuNo());
+			stu2.addCourses(stu2.getCourses());
+			}
+		else if (stuNo==3 && courseNo==2) {
+			cou1.addStuNo(cou1.getStuNo());
+			stu2.addCourses(stu2.getCourses());
+			}
+		else if (stuNo==4 && courseNo==1) {
+			cou0.addStuNo(cou0.getStuNo());
+			stu3.addCourses(stu3.getCourses());
+			}
+		else if (stuNo==4 && courseNo==2) {
+			cou1.addStuNo(cou1.getStuNo());
+			stu3.addCourses(stu3.getCourses());
+			}
+	}
+```
+***13.删减操作方法***
+``` 
+public static void reduceWork(int stuNo,int courseNo) {
+		if (stuNo==1 && courseNo==1) {
+			cou0.reduceStuNo(cou0.getStuNo());
+			stu0.reduceCourses(stu0.getCourses());
+			}
+		else if (stuNo==1 && courseNo==2) {
+			cou1.reduceStuNo(cou1.getStuNo());
+			stu0.reduceCourses(stu0.getCourses());
+			}
+		else if (stuNo==2 && courseNo==1) {
+			cou0.reduceStuNo(cou0.getStuNo());
+			stu1.reduceCourses(stu1.getCourses());
+			}
+		else if (stuNo==2 && courseNo==2) {
+				cou1.reduceStuNo(cou1.getStuNo());
+				stu1.reduceCourses(stu1.getCourses());
+				}
+		else if (stuNo==3 && courseNo==1) {
+				cou0.reduceStuNo(cou0.getStuNo());
+				stu2.reduceCourses(stu2.getCourses());
+				}
+		else if (stuNo==3 && courseNo==2) {
+				cou1.reduceStuNo(cou1.getStuNo());
+				stu2.reduceCourses(stu2.getCourses());
+				}
+		else if (stuNo==4 && courseNo==1) {
+				cou0.reduceStuNo(cou0.getStuNo());
+				stu3.reduceCourses(stu3.getCourses());
+				}
+		else if (stuNo==4 && courseNo==2) {
+				cou1.reduceStuNo(cou1.getStuNo());
+				stu3.reduceCourses(stu3.getCourses());
+				}
+		
+	}
+```
+***14.打印信息方法（打印教师、学生、课程信息与本方法类似）***
+```
+public static void printAll() {
+		System.out.println("<学生选课系统>");
+		System.out.println("<学生信息>");
+		System.out.println("编号   姓名   学号   课数");
+		System.out.println("  "+stu0.getNo()+"  "+stu0.getStudentName()+" "+stu0.getStudentId()+"   "+stu0.getCourses());
+		System.out.println("  "+stu1.getNo()+"  "+stu1.getStudentName()+" "+stu1.getStudentId()+"   "+stu1.getCourses());
+		System.out.println("  "+stu2.getNo()+"  "+stu2.getStudentName()+" "+stu2.getStudentId()+"   "+stu2.getCourses());
+		System.out.println("  "+stu3.getNo()+"  "+stu3.getStudentName()+" "+stu3.getStudentId()+"   "+stu3.getCourses());
+		System.out.println("<教师信息>");
+		System.out.println("编号   姓名   学号   授课");
+		System.out.println("  "+tea0.getNo()+"  "+tea0.getTeacherName()+" "+tea0.getTeacherId()+" "+tea0.getTeaCourse());
+		System.out.println("  "+tea1.getNo()+"  "+tea1.getTeacherName()+" "+tea1.getTeacherId()+" "+tea1.getTeaCourse());
+		System.out.println("<课程信息>");
+		System.out.println("编号   课程名称   教学地点   选课人数");
+		System.out.println("  "+cou0.getNo()+"      "+cou0.getName()+"     "+cou0.getAdd()+"           "+cou0.getStuNo());
+		System.out.println("  "+cou1.getNo()+"      "+cou1.getName()+"     "+cou1.getAdd()+"           "+cou1.getStuNo());
+	}
+```
 ## 系统运行截图  
 Picture1.CPU processor was wrong：
 ![CPU processor was wrong](https://i.loli.net/2020/10/08/bH6dcI1jyV2mQoU.jpg)  
