@@ -23,31 +23,30 @@ Java课程作业项目仓库
 **1.首先创建两个package：Information 和 Run。  
 2.在Information 包中实例化四个类：Teacher、Student、Course 和 People，并在Run 包中实例化一个类：Test。  
 3.People类中：**  
-*(a).作为一个父类，主要为其他三个同包子类提供变量。（最重要两个变量：stuNo、courseNumber,用于计数判断）
-(b).提供默认构造方法和toString方法。*    
+*(a)作为一个父类，主要为其他三个同包子类提供变量。（最重要两个变量：stuNo、courseNumber,用于计数判断）  
+(b)提供默认构造方法和toString方法。*    
 **4.Teacher类中：**  
 *(a)在Teacher类中创建两个 private属性：teacherName和 teacherId分别表示老师姓名和老师工号，并从父类中继承编号（num）、性别（sex）。  
-(b)创建构造方法，调用本类的方法实现信息（编号、姓名、性别）的打印。
-(c)在打印授课名称时，运用 super语法调用People类中course变量。  *   
+(b)创建构造方法，调用本类的方法实现信息（编号、姓名、性别）的打印。  
+(c)在打印授课名称时，运用 super语法调用People类中course变量。*     
 **5.Student类中：**  
-*(a)在Student类中创建两个 private属性：StudentName和 StudentId分别表示学生姓名和学生学号，并从父类中继承编号（num）、性别（sex）。      
-(b)创建构造方法，调用本类的方法实现信息（编号、姓名、性别、学号、课程数）的打印。
+*(a)在Student类中创建两个 private属性：StudentName和 StudentId分别表示学生姓名和学生学号，并从父类中继承编号（num）、性别（sex）。  
+(b)创建构造方法，调用本类的方法实现信息（编号、姓名、性别、学号、课程数）的打印。  
 (c)在打印授课名称时，运用 super语法调用People类中courseNumber变量。  
-(d)创建一组方法（课程数加减方法）：addCourses和 reduceCourses，来实现对课程数修改。  *    
+(d)创建一组方法（课程数加减方法）：addCourses和 reduceCourses，来实现对课程数修改。*      
 **6.Course中：**  
-*(a)在Course类中创建三个private属性：num、name和 add分别表示编、课程名称和上课地址。      
-(b)创建构造方法，调用本类的方法实现信息（编号、姓名、性别、学号、课程数）的打印。
-(c)在打印授课名称时，运用 super语法调用People类中courseNumber变量。
-(d)创建一组方法（学生数加减方法）：addStuNo和 reduceStuNo，来实现对学生数修改。  *    
-**7.Test_courseChooseSystem中**  
-*(a)在本类中，调用 Teacher、Student、Course类，以及 java.util.Scanner用来实现控制台输入信息。
-(b)创建三个方法：judgeStu、judgeChoose、courseChoose依次对输入数据进行判断。
-(c)创建两个个方法：addWork、reduceWork根据对变量 stuNo、courseNo的同时判断，来实现对不同同学选择不同的老师计数。
-(d)创建一组打印方法：printAll、printTeacher、printTeacherAll、printStudent、printStudentAll、printCourse、printCourseAll方便主方法进行信息的打印。
-(e)最后在主方法中建立一个循环（保持选课系统持续存在，方便多次选课），接受第一次数据输入，调用judge（）方法开始进行选课。选课完毕，调用 printAll（）方法打印信息*   
+*(a)在Course类中创建三个private属性：num、name和 add分别表示编、课程名称和上课地址。  
+(b)创建构造方法，调用本类的方法实现信息（编号、姓名、性别、学号、课程数）的打印。  
+(c)在打印授课名称时，运用 super语法调用People类中courseNumber变量。  
+(d)创建一组方法（学生数加减方法）：addStuNo和 reduceStuNo，来实现对学生数修改。*    
+**7.Test_courseChooseSystem中：**  
+*(a)在本类中，调用 Teacher、Student、Course类，以及 java.util.Scanner用来实现控制台输入信息。  
+(b)创建三个方法：judgeStu、judgeChoose、courseChoose依次对输入数据进行判断。  
+(c)创建两个个方法：addWork、reduceWork根据对变量 stuNo、courseNo的同时判断，来实现对不同同学选择不同的老师计数。  
+(d)创建一组打印方法：printAll、printTeacher、printTeacherAll、printStudent、printStudentAll、printCourse、printCourseAll方便主方法进行信息的打印。  
+(e)最后在主方法中建立一个循环（保持选课系统持续存在，方便多次选课），接受第一次数据输入，调用judge（）方法开始进行选课。选课完毕，调用 printAll（）方法打印信息.*   
 ## 流程图  
 ## 核心方法  
-
 ***1.Teacher构造方法***
 ```
 public Teacher(int number,String name,String id,String course){
