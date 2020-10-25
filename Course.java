@@ -1,20 +1,16 @@
 package Information;
 
-import java.util.Scanner;
-import Run.Test_courseChooseSystem;
 public class Course extends People{
-	int num;
-	
-	
-	String name;
-	String add;
-	
+	private int num;
+	private String name;
+	private String add;
 public Course(int number,String name,String add,int stuNo){
 	setNo(number);
 	setName(name);
 	setAdd(add);
 	setStuNo(stuNo);
 	}
+
 public int getNo(){
 	return num;	
 }

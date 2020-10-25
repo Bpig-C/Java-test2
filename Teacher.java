@@ -1,15 +1,12 @@
 package Information;
 
-import java.util.Scanner;
-
-
 public class Teacher extends People {
 	private String teacherName;
 	private String teacherId;
-	  ;
-public Teacher(int number,String name,String id,String course){
+public Teacher(int number,String name,String sex,String id,String course){
 	setNo(number);
 	setTeacherName(name);
+	setSex(sex);
 	setTeacherId(id);
 	setTeaCourse(course);
 }
@@ -24,6 +21,12 @@ public String getTeacherName(){
 }
 void setTeacherName(String teacherName) {
 	this.teacherName = teacherName;	
+}
+void setSex(String sex) {
+    super.sex=sex;	
+}
+public String getSex(){
+	return sex;	
 }
 public String getTeacherId(){
 	return teacherId;	

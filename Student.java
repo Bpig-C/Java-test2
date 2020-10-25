@@ -4,16 +4,14 @@ public class Student extends People {
 	private String studentName;
 	private String studentId;
 		
-public Student(int number,String name,String sex,String id,int course){
-	//setStudentChoose(choose);
-	setNo(number);
-	setStudentName(name);
-	setStudentId(id);
-	setCourses(course);
+public Student(int number,String name,String sex,String id,int course)
+	{	setNo(number);
+		setStudentName(name);
+		setSex(sex);
+		setStudentId(id);
+		setCourses(course);
 	}
-//public void setStudentChoose(boolean choose) {
-	//if (choose == true)
-		//}
+
 public int getNo(){
 	return num;	
 }
@@ -25,6 +23,12 @@ public String getStudentName(){
 }
 void setStudentName(String studentName) {
 	this.studentName = studentName;	
+}
+void setSex(String sex) {
+    super.sex=sex;	
+}
+public String getSex(){
+	return sex;	
 }
 public String getStudentId(){
 	return studentId;	
