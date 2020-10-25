@@ -46,7 +46,7 @@ Java课程作业项目仓库
 (d)创建一组打印方法：printAll、printTeacher、printTeacherAll、printStudent、printStudentAll、printCourse、printCourseAll方便主方法进行信息的打印。  
 (e)最后在主方法中建立一个循环（保持选课系统持续存在，方便多次选课），接受第一次数据输入，调用judge（）方法开始进行选课。选课完毕，调用 printAll（）方法打印信息.*   
 ## 流程图  
-![JavaTest2.jpg](https://i.loli.net/2020/10/25/AoEjRTBXObKQnH1.png)
+![JavaTest2.jpg](https://i.loli.net/2020/10/25/5hvFrJS64P8zfEu.png)
 ## 核心方法  
 ***1.Teacher构造方法***
 ```
