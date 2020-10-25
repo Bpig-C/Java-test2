@@ -278,12 +278,10 @@ public static void printAll() {
 	}
 ```
 ## 系统运行截图  
-Picture1.CPU processor was wrong：
-![CPU processor was wrong](https://i.loli.net/2020/10/08/bH6dcI1jyV2mQoU.jpg)  
-Picture2.CPU hertz and HarddDsk readSpeed were wrong： 
-![CPU hertz and HarddDsk readSpeed were wrong](https://i.loli.net/2020/10/08/s1z3MkDolgILCJN.jpg)  
-Picture3.The right result:
-![The right result](https://i.loli.net/2020/10/08/3AUnRsKVHcXBldh.jpg)  
+Picture1.choose coures：
+![JavaChooseCourse.jpg](https://i.loli.net/2020/10/25/latd8OJBP2yVQIZ.jpg)  
+Picture2.exit course： 
+![JavaExitCourse.jpg](https://i.loli.net/2020/10/25/MlCdcyD9PguVbYE.jpg)   
 ## 实验感想  
 通过本次实验，我学会并熟悉了前半学期的课程内容：
 第二章：基本数据类型、输入输出数据
