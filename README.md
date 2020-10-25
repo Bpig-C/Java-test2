@@ -278,9 +278,9 @@ public static void printAll() {
 	}
 ```
 ## 系统运行截图  
-Picture1.choose coures：
+***Picture1.choose coures：***
 ![JavaChooseCourse.jpg](https://i.loli.net/2020/10/25/latd8OJBP2yVQIZ.jpg)  
-Picture2.exit course： 
+***Picture2.exit course：***
 ![JavaExitCourse.jpg](https://i.loli.net/2020/10/25/MlCdcyD9PguVbYE.jpg)   
 ## 实验感想  
 **通过本次实验，我学会并熟悉了前半学期的课程内容：  
