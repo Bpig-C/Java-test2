@@ -10,6 +10,9 @@ public Teacher(int number,String name,String sex,String id,String course){
 	setTeacherId(id);
 	setTeaCourse(course);
 }
+public String toString() {
+	return num+teacherName+sex+teacherId+course;
+}
 public int getNo(){
 	return num;	
 }
