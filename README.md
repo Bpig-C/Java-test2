@@ -46,6 +46,7 @@ Java课程作业项目仓库
 (d)创建一组打印方法：printAll、printTeacher、printTeacherAll、printStudent、printStudentAll、printCourse、printCourseAll方便主方法进行信息的打印。  
 (e)最后在主方法中建立一个循环（保持选课系统持续存在，方便多次选课），接受第一次数据输入，调用judge（）方法开始进行选课。选课完毕，调用 printAll（）方法打印信息.*   
 ## 流程图  
+![JavaTest2.jpg](https://i.loli.net/2020/10/25/AoEjRTBXObKQnH1.png)
 ## 核心方法  
 ***1.Teacher构造方法***
 ```
@@ -65,7 +66,13 @@ void setNo(int number) {
 	this.num=number;	
 }
 ``` 
-***3.Student构造方法***  
+***3.Teacher toString方法***
+```
+public String toString() {
+	return num+name+sex+id+course;
+}
+``` 
+***4.Student构造方法***  
 ```
 public Student(int number,String name,String sex,String id,int course){
 	setNo(number);
@@ -74,7 +81,7 @@ public Student(int number,String name,String sex,String id,int course){
 	setCourses(course);
 	}
 ``` 
-***4.Student内打印编号方法（与姓名、学号、性别、课程数类似）***
+***5.Student内打印编号方法（与姓名、学号、性别、课程数方法类似）***
 ```
 public int getNo(){
 	return num;	
@@ -83,7 +90,7 @@ void setNo(int number) {
 	this.num=number;	
 }
 ``` 
-***5.课程数增减方法***
+***6.课程数增减方法***
 ```
 public void addCourses(int courseNumber) {
 	this.courseNumber = courseNumber+1;
@@ -93,7 +100,7 @@ public void reduceCourses(int courseNumber) {
 }
 }
 ```
-***6.Course构造方法***
+***7.Course构造方法***
 ``` 
 public Course(int number,String name,String add,int stuNo){
 	setNo(number);
@@ -102,7 +109,7 @@ public Course(int number,String name,String add,int stuNo){
 	setStuNo(stuNo);
 	}
 ```
-***7.学生数增减方法***
+***8.学生数增减方法***
 ``` 
 public void addStuNo(int stuNo) {
 	super.stuNo = stuNo+1;
@@ -111,7 +118,7 @@ public void reduceStuNo(int stuNo) {
 	super.stuNo = stuNo-1;
 }
 ```
-***8.Test主方法***
+***9.Test主方法***
 ``` 
 public static void main(String[] args) {
 		
@@ -127,7 +134,7 @@ public static void main(String[] args) {
 		
 	}
 ```
-***9.学生选择方法（根据主类中获得数据选择学生）***
+***10.学生选择方法（根据主类中获得数据选择学生）***
 ``` 
 public static void judgeStu(int No) {
 		Scanner reader = new Scanner(System.in);
@@ -144,7 +151,7 @@ public static void judgeStu(int No) {
 			judgeChoose(y);
 	}
 ```
-***10.选退课判断方法***
+***11.选退课判断方法***
 ``` 
 public static void judgeChoose(int No) {//确认退课选课，选择课程编号
 		Scanner reader = new Scanner(System.in);
@@ -161,7 +168,7 @@ public static void judgeChoose(int No) {//确认退课选课，选择课程编�
 		    }
 	}
 ```
-***11.课程选择方法***
+***12.课程选择方法***
 ``` 
 public static void courseChoose(int No) {//选择课程并打印老师
 		Scanner reader = new Scanner(System.in);
@@ -175,7 +182,7 @@ public static void courseChoose(int No) {//选择课程并打印老师
 		
 	}
 ```
-***12.增加操作方法***
+***13.增加操作方法***
 ``` 
 public static void addWork(int stuNo,int courseNo) {
 		if (stuNo==1 && courseNo==1) {
@@ -212,7 +219,7 @@ public static void addWork(int stuNo,int courseNo) {
 			}
 	}
 ```
-***13.删减操作方法***
+***14.删减操作方法***
 ``` 
 public static void reduceWork(int stuNo,int courseNo) {
 		if (stuNo==1 && courseNo==1) {
@@ -250,7 +257,7 @@ public static void reduceWork(int stuNo,int courseNo) {
 		
 	}
 ```
-***14.打印信息方法（打印教师、学生、课程信息与本方法类似）***
+***15.打印信息方法（打印教师、学生、课程信息与本方法类似）***
 ```
 public static void printAll() {
 		System.out.println("<学生选课系统>");
